@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "IrJQE44E6GenONv1oDC67l/k7OV2lpwP3+njQZzzjILHaNtq3PeteZCZhyZVdi+Y/GEsp9pDWp2R65Cv7y8+WQ==",
+  "dgSpecHash": "IqEn5ltTlA5jP0SZ+o4qu0emBKpDjYkXkpMOHf8NBx/g2LwP+9q1Z9rRAFDkqkxjRygVKDqYzVSVxJBUIJ8NPw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ksysh\\source\\repos\\Digital_Signature\\Digital_Signature.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ksysh\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "C:\\Users\\ksysh\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\ksysh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\ksysh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\ksysh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
+  ],
   "logs": []
 }

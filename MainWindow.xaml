@@ -3,16 +3,50 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Digital_Signature"
         mc:Ignorable="d"
-        Title="Электронная подпись" Height="250" Width="464" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow">
-    <Grid VerticalAlignment="Center" Height="234" Background="White">
-        <Label Content="Электронная подпись" Margin="149,15,0,0" VerticalAlignment="Top" FontFamily="{StaticResource Inter}" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left" Width="166"/>
-        <Button Content="Загрузить файл" Margin="0,165,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Height="20" VerticalAlignment="Top" Click="ButtonAddFile_Click" FontFamily="{StaticResource Inter}" HorizontalAlignment="Center" Width="110"/>
-        <StackPanel x:Name="StackPanelFiles" Margin="80,55,80,0" Background="#FFF9F6F6" Height="102" VerticalAlignment="Top" AllowDrop="True" Drop="StackPanelFiles_Drop"/>
-        <Button Content="Добавить эп" HorizontalAlignment="Left" Margin="25,195,0,0" VerticalAlignment="Top" Width="110" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Click="ButtonAddDS_Click" FontFamily="{StaticResource Inter}"/>
-        <Button Content="Проверить эп" Margin="0,195,25,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Right" Width="110" Click="ButtonCheckDS_Click" FontFamily="{StaticResource Inter}"/>
-        <Label Content="Перетащить файл" Margin="172,124,0,0" VerticalAlignment="Top" FontFamily="{StaticResource ResourceKey=Inter}" Foreground="#7F000000" HorizontalAlignment="Left" Width="116"/>
+        Title="Электронная подпись" Height="353" Width="663" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        WindowStyle="ThreeDBorderWindow">
+    <Grid Background="White">
+        <Label Content="Электронная подпись" Margin="248,10,0,0" VerticalAlignment="Top"
+               FontFamily="{StaticResource Inter}" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left"
+               Width="166" />
+        <Button Content="Загрузить файл" Margin="472,56,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand"
+                Height="20" VerticalAlignment="Top" Click="ButtonAddFile_Click" FontFamily="{StaticResource Inter}"
+                HorizontalAlignment="Left" Width="110" />
+        <StackPanel x:Name="StackPanelFile" Margin="80,81,81,0" Background="#FFF9F6F6" Height="56"
+                    VerticalAlignment="Top" AllowDrop="True" Drop="StackPanelFiles_Drop" />
+        <Button Content="Добавить эп" HorizontalAlignment="Left" Margin="22,288,0,0" VerticalAlignment="Top"
+                Width="110" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Hand" Click="ButtonAddDS_Click"
+                FontFamily="{StaticResource Inter}" />
+        <Button Content="Проверить эп" Margin="0,288,24,0" VerticalAlignment="Top" Background="{x:Null}"
+                BorderBrush="{x:Null}" Cursor="Hand" HorizontalAlignment="Right" Width="110"
+                Click="ButtonCheckDS_Click" FontFamily="{StaticResource Inter}" />
+        <Label Content="Перетащить файл" VerticalAlignment="Top" FontFamily="{StaticResource ResourceKey=Inter}"
+               Foreground="#7F000000" HorizontalAlignment="Center" Width="98" Margin="0,114,0,0" FontSize="10" />
+        <Label Content="Добавьте файл, который нужно подписать: " VerticalAlignment="Top"
+               FontFamily="{StaticResource ResourceKey=Inter}" HorizontalAlignment="Left" Width="292"
+               Margin="80,51,0,0" />
+        <Image HorizontalAlignment="Left" Height="21" Margin="419,13,0,0" VerticalAlignment="Top" Width="21"
+               Source="/writing-hand-medium-light-skin-tone_270d-1f3fc.png" />
+        <Menu Margin="0,3,0,0" Background="{x:Null}" Foreground="Black" Height="21" VerticalAlignment="Top">
+            <Button Background="{x:Null}" BorderBrush="{x:Null}" Content="Создать ключи"
+                    FontFamily="{StaticResource Inter}" FontSize="10" Click="Button_Click" Cursor="Hand" />
+            <Button Background="{x:Null}" BorderBrush="{x:Null}" Content="Справка"
+                    FontFamily="{StaticResource ResourceKey=Inter}" FontSize="10" Cursor="Hand" />
+        </Menu>
+        <Button Content="Загрузить файл" Margin="472,196,0,0" Background="{x:Null}" BorderBrush="{x:Null}"
+                Cursor="Hand" Height="20" VerticalAlignment="Top" Click="ButtonAddKey_Click"
+                FontFamily="{StaticResource Inter}" HorizontalAlignment="Left" Width="110" />
+        <StackPanel x:Name="StackPanelKey" Margin="80,221,81,0" Background="#FFF9F6F6" Height="56"
+                    VerticalAlignment="Top" AllowDrop="True" Drop="StackPanelKey_Drop" />
+        <Label Content="Добавьте ключ: " VerticalAlignment="Top"
+               FontFamily="{StaticResource ResourceKey=Inter}" HorizontalAlignment="Left" Width="114"
+               Margin="80,191,0,0" />
+        <Label Content="Перетащить файл" VerticalAlignment="Top" FontFamily="{StaticResource ResourceKey=Inter}"
+               Foreground="#7F000000" HorizontalAlignment="Center" Width="98" Margin="0,253,0,0" FontSize="10" />
+        <Label Content="Для добавления подписи – закрытый ключ, для проверки – открытый" VerticalAlignment="Top"
+               FontFamily="{StaticResource ResourceKey=Inter}" HorizontalAlignment="Left" Width="392" FontSize="10"
+               Margin="80,164,0,0" />
 
     </Grid>
 </Window>

@@ -7,7 +7,6 @@ C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\Digital_S
 C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\Digital_Signature_MarkupCompile.cache
-C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\Digital_Signature_MarkupCompile.lref
 C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\Digital_Signature.g.resources
 C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\Digital_Signature.GeneratedMSBuildEditorConfig.editorconfig
@@ -20,3 +19,5 @@ C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\Digital_S
 C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\Digital_Signature.genruntimeconfig.cache
 C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\ref\Digital_Signature.dll
 C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\App.baml
+C:\Users\ksysh\source\repos\Digital_Signature\bin\Debug\net6.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\Digital_Signature.csproj.CopyComplete
