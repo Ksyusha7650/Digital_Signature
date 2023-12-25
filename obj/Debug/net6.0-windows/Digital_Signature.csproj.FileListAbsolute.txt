@@ -21,3 +21,4 @@ C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\ref\Digit
 C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\App.baml
 C:\Users\ksysh\source\repos\Digital_Signature\bin\Debug\net6.0-windows\BouncyCastle.Cryptography.dll
 C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\Digital_Signature.csproj.CopyComplete
+C:\Users\ksysh\source\repos\Digital_Signature\obj\Debug\net6.0-windows\Digital_Signature.sourcelink.json

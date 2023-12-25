@@ -8,11 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Remove="writing-hand-medium-light-skin-tone_270d-1f3fc.png"/>
+        <None Remove="writing-hand-medium-light-skin-tone_270d-1f3fc.png" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1"/>
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1" />
     </ItemGroup>
 
 </Project>

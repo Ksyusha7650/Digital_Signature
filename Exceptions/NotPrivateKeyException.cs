@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Digital_Signature;
+namespace Digital_Signature.Exceptions;
 
 public class NotPrivateKeyException : Exception
 {
     public NotPrivateKeyException()
     {
-        Message = "Неправильный приватный ключ";
+        Message = "Неправильный закрытый ключ!";
     }
 
     public override string Message { get; }

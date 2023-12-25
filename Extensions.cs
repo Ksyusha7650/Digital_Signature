@@ -4,7 +4,7 @@ using Microsoft.Win32;
 
 namespace Digital_Signature;
 
-public class Extensions
+public abstract class Extensions
 {
     public static OpenFileDialog OpenFileDialog(string nameFilter, string filter)
     {

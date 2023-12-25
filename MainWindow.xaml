@@ -31,8 +31,6 @@
         <Menu Margin="0,3,0,0" Background="{x:Null}" Foreground="Black" Height="21" VerticalAlignment="Top">
             <Button Background="{x:Null}" BorderBrush="{x:Null}" Content="Создать ключи"
                     FontFamily="{StaticResource Inter}" FontSize="10" Click="Button_Click" Cursor="Hand" />
-            <Button Background="{x:Null}" BorderBrush="{x:Null}" Content="Справка"
-                    FontFamily="{StaticResource ResourceKey=Inter}" FontSize="10" Cursor="Hand" />
         </Menu>
         <Button Content="Загрузить файл" Margin="472,196,0,0" Background="{x:Null}" BorderBrush="{x:Null}"
                 Cursor="Hand" Height="20" VerticalAlignment="Top" Click="ButtonAddKey_Click"

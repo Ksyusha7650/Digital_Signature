@@ -10,7 +10,7 @@ namespace Digital_Signature;
 /// </summary>
 public partial class MainWindow : Window
 {
-    private string _file, _key;
+    private string _file = "", _key = "";
 
     public MainWindow()
     {
@@ -85,6 +85,8 @@ public partial class MainWindow : Window
         var key = Extensions.ReadFromFile(_key);
         try
         {
+            if (content.EndsWith("\r\n"))
+                content = content.Remove(content.Length - 2, 2);
             var sign = AlgorithmCrypto.Crypt(content, key);
             var streamWriter = File.CreateText(_file.Split(".")[0] + ".sig");
             streamWriter.WriteLine(sign);
@@ -118,6 +120,10 @@ public partial class MainWindow : Window
         var signature = Extensions.ReadFromFile(openFileDialog.FileName);
         try
         {
+            if (content.EndsWith("\r\n"))
+                content = content.Remove(content.Length - 2, 2);
+            if (signature.EndsWith("\r\n"))
+                signature = signature.Remove(signature.Length - 2, 2);
             var check = AlgorithmCrypto.Check(content, key, signature);
             MessageBox.Show(check ? "Подпись действительна" : "Подпись недействительна");
         }

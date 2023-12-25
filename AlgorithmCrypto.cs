@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
+using Digital_Signature.Exceptions;
 
 namespace Digital_Signature;
 
@@ -10,57 +14,60 @@ internal abstract class AlgorithmCrypto
 {
     public static void MakeKeys()
     {
-        using var rsa = new RSACryptoServiceProvider();
-        var privateKey = rsa.ExportRSAPrivateKey();
+        using var rsa = new RSA();
+        var privateKey = rsa.PrivateKey;
         var saveFileDialog = Extensions.SaveFileDialog();
         if (saveFileDialog.ShowDialog() != true) return;
         var savePath = Path.GetDirectoryName(saveFileDialog.FileName);
         var streamWriter = File.CreateText(savePath + "\\private_key.pem");
-        streamWriter.Write(Convert.ToBase64String(privateKey));
+        streamWriter.Write(privateKey);
         streamWriter.Close();
-        var publicKey = rsa.ExportRSAPublicKey();
+        var publicKey = rsa.PublicKey;
         streamWriter = File.CreateText(savePath + "\\public_key.pem");
-        streamWriter.Write(Convert.ToBase64String(publicKey));
+        streamWriter.Write(publicKey);
         streamWriter.Close();
         MessageBox.Show("Ключи созданы!");
     }
 
+
+
     internal static string Crypt(string content, string privateKey)
     {
-        using var rsa = new RSACryptoServiceProvider();
-        var key = Convert.FromBase64String(privateKey);
+        long E, n;
         try
         {
-            rsa.ImportRSAPrivateKey(key, out _);
+            var parameters = privateKey.Split("\n");
+            E = long.Parse(parameters[0]);
+            n = long.Parse(parameters[1]);
         }
         catch
         {
             throw new NotPrivateKeyException();
         }
-
+        using var rsa = new RSA(E, n, false);
         var hash = ComputeHashContent(content);
-        var signature = rsa.SignHash(hash, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
-        return Convert.ToBase64String(signature);
+        var signature = rsa.Encrypt(Convert.ToBase64String(hash));
+        return signature;
     }
 
     public static bool Check(string content, string publicKey, string signature)
     {
-        using var rsa = new RSACryptoServiceProvider();
-        var key = Convert.FromBase64String(publicKey);
+        long D, n;
         try
         {
-            rsa.ImportRSAPublicKey(key, out _);
+            var parameters = publicKey.Split("\n");
+            D = long.Parse(parameters[0]);
+            n = long.Parse(parameters[1]);
         }
         catch
         {
             throw new NotPublicKeyException();
         }
-
-        var hash = ComputeHashContent(content);
-        var isSignatureValid = rsa.VerifyHash(
-            hash, Convert.FromBase64String(signature), HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
-
-        return isSignatureValid;
+        using var rsa = new RSA(D, n);
+        var hash = rsa.Decrypt(signature);
+        var hash2 = ComputeHashContent(content);
+        var hashStr = Convert.ToBase64String(hash2);
+        return hash.SequenceEqual(hashStr);
     }
 
     private static byte[] ComputeHashContent(string content)
